@@ -10,6 +10,13 @@ describe('App', () => {
 
   it('should render Person List Component', () => {
     const appWrapper = shallow(<App />);
-    appWrapper.find(<PersonList />);
+    appWrapper.find(PersonList);
+  });
+
+  it('should have only one person list component', () => {
+    const appWrapper = shallow(<App />);
+    const personList = appWrapper.find(PersonList);
+
+    expect(personList).toHaveLength(1);
   });
 });
