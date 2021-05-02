@@ -26,4 +26,10 @@ describe('App', () => {
 
     expect(appState).not.toBeNull();
   });
+
+  it('should have people property on the state', () => {
+    const appState = appWrapper.state();
+    
+    expect(appState.people).toBeDefined();
+  });
 });
