@@ -19,4 +19,9 @@ describe('App', () => {
 
     expect(personList).toHaveLength(1);
   });
+
+  it('should have a state', () => {
+    const appWrapper = shallow(<App />);
+    const appState = appWrapper.state();
+  });
 });
