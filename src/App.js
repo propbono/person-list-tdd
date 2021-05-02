@@ -1,12 +1,15 @@
 import './App.css';
 import PersonList from './components/PersonList';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <PersonList />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <PersonList />
+      </div>
+    );
+  }
 }
 
 export default App;
