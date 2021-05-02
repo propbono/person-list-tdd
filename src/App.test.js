@@ -11,10 +11,6 @@ describe('App', () => {
     appWrapper = shallow(<App />);
   });
 
-  it('renders the App component', () => {
-    const appWrapper = shallow(<App />);
-  });  
-
   it('should render Person List Component', () => {
     appWrapper.find(PersonList);
   });
@@ -23,10 +19,6 @@ describe('App', () => {
     const personList = appWrapper.find(PersonList);
 
     expect(personList).toHaveLength(1);
-  });
-
-  it('should have a state', () => {
-    const appState = appWrapper.state();
   });
 
   it('should have not null state', () => {
