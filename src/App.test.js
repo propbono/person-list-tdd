@@ -24,4 +24,11 @@ describe('App', () => {
     const appWrapper = shallow(<App />);
     const appState = appWrapper.state();
   });
+
+  it('should have not null state', () => {
+    const appWrapper = shallow(<App />);
+    const appState = appWrapper.state();
+
+    expect(appState).not.toBeNull();
+  });
 });
