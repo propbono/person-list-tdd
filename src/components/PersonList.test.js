@@ -25,4 +25,15 @@ describe("PersonList", () => {
 
     expect(peopleListItems).toHaveLength(1);
   });
+
+  it("renders li element per each person in the people props", () => {
+    const people = [
+      { firstName: "John", lastName: "Doe" },
+      { firstName: "Greg", lastName: "Mozer" },
+    ];
+    const personListWrapper = shallow(<PersonList people={people} />);
+    const peopleListItems = personListWrapper.find("li");
+
+    expect(peopleListItems).toHaveLength(2);
+  });
 });
