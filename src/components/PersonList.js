@@ -1,9 +1,9 @@
 import React from "react";
 
-export default (props) => (
+export default ({ people = [] }) => (
   <ul>
-    {props.people
-      ? props.people.map((person, i) => <li key={i.toString()}></li>)
-      : undefined}
+    {people.map((person, i) => (
+      <li key={i}></li>
+    ))}
   </ul>
 );
