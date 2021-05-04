@@ -36,4 +36,28 @@ describe("PersonList", () => {
 
     expect(peopleListItems).toHaveLength(2);
   });
+
+  it("renders first and last name with space between for one person", () => {
+    const people = [{ firstName: "John", lastName: "Doe" }];
+    const personListWrapper = shallow(<PersonList people={people} />);
+    const peopleListItems = personListWrapper.find("li");
+    const excpectedPerson = people[0].firstName + " " + people[0].lastName;
+
+    expect(peopleListItems.text()).toEqual(excpectedPerson);
+  });
+
+  it("renders first and last name for each person on the people props", () => {
+    const people = [
+      { firstName: "John", lastName: "Doe" },
+      { firstName: "Greg", lastName: "Mozer" },
+    ];
+    const personListWrapper = shallow(<PersonList people={people} />);
+    const peopleListItems = personListWrapper.find("li");
+
+    const excpectedPerson1 = people[0].firstName + " " + people[0].lastName;
+    const excpectedPerson2 = people[1].firstName + " " + people[1].lastName;
+
+    expect(peopleListItems.first().text()).toEqual(excpectedPerson1);
+    expect(peopleListItems.last().text()).toEqual(excpectedPerson2);
+  });
 });
